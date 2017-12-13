@@ -1,0 +1,192 @@
+@import "./adapter.less";
+
+@import "./base.less";
+
+@import "./fonts.less";
+
+@import "./normalize.less";
+
+@import "./mixin.less";
+
+//整个视口
+.viewport {
+
+  //侧边栏
+  .nav {
+    width: 410/32rem;
+    height: 100%;
+    background-color: #e7eaee;
+    position: fixed;
+    left: (-410rem / 32);
+    top: 0;
+    //border: 1px solid #000;
+
+    //上部
+    dl {
+      padding-left: 32/32rem;
+      float: left;
+    }
+    .login {
+      margin: 54/32rem 0;
+      height: 70/32rem;
+      .avatar {
+        width: 70/32rem;
+        height: 100%;
+        float: left;
+      }
+
+      a {
+        display: block;
+        line-height: 1;
+        padding: (22rem / 32) 0;
+        margin-left: (88rem / 32);
+        font-size: (26rem / 32);
+        color: black;
+      }
+    }
+
+    dd {
+      margin: 16/32rem 0;
+      padding: 16/32rem 0;
+      line-height: 1;
+
+      a {
+        font-size: 36/32rem;
+        color: #fff;
+        span {
+          color: #000;
+        }
+        span.active {
+          color: #23a392;
+        }
+      }
+
+      a[class^="icon"]:before {
+        display: inline-block;
+        width: (36rem  / 32);
+        height: (36rem  / 32);
+        line-height: (36rem  / 32);
+        text-align: center;
+        .border-radius(50%);
+        font-size: (24rem / 32);
+        position: relative;
+        left: -2px;
+        top: -3px;
+      }
+
+      .icon-home:before {
+        background-color: #46c8ce;
+        }
+
+      .icon-file-empty:before {
+        background-color: #62c98d;
+      }
+
+      .icon-pencil:before {
+        background-color: #eb9d58;
+      }
+
+      .icon-menu:before {
+        background-color: #5293d0;
+      }
+
+      .icon-heart:before {
+        background-color: #ff7777;
+      }
+
+      .icon-cog:before {
+        background-color: #fdcc65;
+      }
+
+    }
+    //下部
+    .extra {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      a {
+        width: 50%;
+        text-align: center;
+        padding: (20rem / 32) 0;
+        border-top: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        font-size: (24rem / 32);
+        float: left;
+        color: #8a8a8a;
+        .box-sizing;
+        
+        &:before {
+          display: inline-block;
+          width: 44/32rem;
+          height: 44/32rem;
+          text-align: center;
+          .border-radius(50%);
+          line-height: 44/32rem;
+          background-color: #8a8a8a;
+          color: #F7F7F7;
+          margin-right: 16/32rem;
+        }
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+
+  //内容部分
+  .container {
+    //头部
+    .header {
+      width: 100%;
+      max-width: 640px;
+      height: 88/32rem;
+      background-color: #21bba6;
+      position: fixed;
+      top: 0;
+      z-index: 9;
+      .box-sizing;
+      border-bottom: (4rem / 32) solid #05ab94;
+      color: #FFF;
+      padding-top: 26/32rem;
+
+      a{
+        position: absolute;
+        font-size: (36rem / 32);
+        color: #FFF;
+      }
+
+      .menu {
+        left: 24/32rem;
+      }
+
+      .search {
+        top: 26/32rem;
+        right: 24/32rem;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: (36rem / 32);
+        line-height: 1;
+      }
+    }
+
+    //主体
+    .body {
+
+    }
+  }
+
+
+
+
+
+}
+
+
+
+
