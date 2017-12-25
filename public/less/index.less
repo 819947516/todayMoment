@@ -19,8 +19,8 @@
     position: fixed;
     left: (-410rem / 32);
     top: 0;
+    transition: all 1s 0.1s;
     //border: 1px solid #000;
-
     //上部
     dl {
       padding-left: 32/32rem;
@@ -49,6 +49,7 @@
       margin: 16/32rem 0;
       padding: 16/32rem 0;
       line-height: 1;
+      transform: translate(-100%);
 
       a {
         font-size: 36/32rem;
@@ -139,6 +140,8 @@
 
   //内容部分
   .container {
+    transition: all 1s 0.1s;
+
     padding-top: (88rem / 32);
     //头部
     .header {
@@ -300,6 +303,7 @@
 
       //热门作者
       .author {
+        position: relative;
         //本周推荐
         dt {
           padding: (28rem / 32) 0 (28rem / 32) (40rem / 32);
@@ -322,6 +326,14 @@
           margin-left: (136rem / 32);
           border-bottom: 1px solid #dadada;
           .box-sizing;
+        }
+        button {
+          border: none;
+          color: #7f7f7f;
+          //background-color: rgba(240,240,240,1);
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
         }
       }
 

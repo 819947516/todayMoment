@@ -9,10 +9,10 @@
 	<script src="../public/libs/less.js"></script>
 
 </head>
-<body>
+<body ng-app="Todays">
 	<div class="viewport">
 		<!--导航栏-->
-		<div class="nav">
+		<div ng-class="{nav:true, collapse:collapsed}" ng-controller="NavController">
 			<dl>
 				<dt class="login">
 				<div class="avatar">
@@ -20,34 +20,9 @@
 				</div>
 				<a href="javascript:;">登陆</a>
 				</dt>
-				<dd>
-					<a href="javascript:;" class="icon-home">
-						<span class="active">今日一刻</span>
-					</a>
-				</dd>
-				<dd>
-					<a href="javascript:;" class="icon-file-empty">
-						<span>往期内容</span>
-					</a>
-				</dd>
-				<dd>
-					<a href="javascript:;" class="icon-pencil">
-						<span>热门作者</span>
-					</a>
-				</dd>
-				<dd>
-					<a href="javascript:;" class="icon-menu">
-						<span>栏目浏览</span>
-					</a>
-				</dd>
-				<dd>
-					<a href="javascript:;" class="icon-heart">
-						<span>我的喜欢</span>
-					</a>
-				</dd>
-				<dd>
-					<a href="javascript:;" class="icon-cog">
-						<span>设置</span>
+				<dd  ng-repeat="(key, nav) in navs" ng-click="toggle()">
+					<a href="{{nav.link}}" class="{{nav.icon}}">
+						<span ng-class="{active: index == key}" >{{nav.text}}</span>
 					</a>
 				</dd>
 			</dl>
@@ -56,11 +31,12 @@
 				<a href="javascript:;" class="icon-download">离线</a>
 			</div>
 		</div>
-		<div class="container">
-			<!-- 头部 -->
+		<!--内容-->
+		<div ng-class="{container:true, collapse:collapsed}">
+			<!--头部-->
 			<div class="header">
-				<a href="javascript:;" class="menu icon-menu"></a>
-				<h2>文章列表</h2>
+				<a href="javascript:;" class="menu icon-menu" ng-click="toggle()"></a>
+				<h2>今日一刻</h2>
 				<a href="javascript:;" class="search icon-search"></a>
 			</div>
 			<!-- 主体 -->
@@ -134,5 +110,12 @@
 		</div>
 	</div>
 	<!--<script src="./libs/toggle.js"></script>-->
+	<script src="../public/libs/angular.js"></script>
+	<script src="../public/libs/angular-route.min.js"></script>
+
+	<script src="../script/app.js"></script>
+	<script src="../script/controller.js"></script>
+	<script src="../script/directive.js"></script>
+
 </body>
 </html>

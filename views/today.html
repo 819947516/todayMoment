@@ -1,7 +1,6 @@
-
 <div class="mark" ng-show="loaded">{{time|date:'ddMMM'}}</div>
 <!--文章-->
-<ul class="posts">
+<ul class="posts large">
     <li ng-repeat=" data in datas">
         <a href="javascript:;" ng-if="data.column.name">{{data.column.name}}</a>
         <div class="cont">
@@ -20,5 +19,3 @@
     </li>
 
 </ul>
-
-
