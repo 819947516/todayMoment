@@ -16,6 +16,7 @@ angular.module('Controllers',[])
     //today控制器
     .controller('TodayController',['$scope','$http','$filter','$rootScope',function ($scope, $http, $filter,$rootScope) {
         var today = new Date();
+        $rootScope.title = '今日一刻';
         $rootScope.index = 0;
         $rootScope.loaded  = false;
         today = $filter('date')(today,'yyyy-MM-dd');
@@ -35,6 +36,7 @@ angular.module('Controllers',[])
     //older控制器
     .controller('OlderController',['$scope','$http','$rootScope',function ($scope,$http,$rootScope) {
         $rootScope.index = 1;
+        $rootScope.title = '往期内容';
         $rootScope.loaded  = false;
         $http({
             url:'./api/older.php',
@@ -51,6 +53,7 @@ angular.module('Controllers',[])
     //热门作者控制器
     .controller('AuthorController',['$scope','$http','$rootScope',function ($scope,$http,$rootScope) {
         $rootScope.index = 2;
+        $rootScope.title = '热门作者';
         $http({
             url:'./api/re_author.php',
             method:'get'
@@ -85,6 +88,7 @@ angular.module('Controllers',[])
     //栏目浏览
     .controller('CategoryController',['$scope','$http','$rootScope',function ($scope, $http,$rootScope) {
         $rootScope.index = 3;
+        $rootScope.title = '栏目浏览';
         $rootScope.loaded  = false;
         $http({
             url:'./api/category.php',
@@ -100,9 +104,14 @@ angular.module('Controllers',[])
     }])
     .controller('FavouriteController',['$scope','$rootScope',function ($scope,$rootScope) {
         $rootScope.index = 4;
+        $rootScope.title = 'favourite';
+
+        $rootScope.loaded  = true;
 
     }])
     .controller('SettingsController',['$scope','$rootScope',function ($scope,$rootScope) {
         $rootScope.index = 5;
+        $rootScope.title = '设置11';
+        $rootScope.loaded  = true;
 
     }]);
