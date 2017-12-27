@@ -1,0 +1,24 @@
+
+<div class="mark" ng-show="loaded">{{time|date:'ddMMM'}}</div>
+<!--文章-->
+<ul class="posts">
+    <li ng-repeat=" data in datas">
+        <a href="javascript:;" ng-if="data.column.name">{{data.column.name}}</a>
+        <div class="cont">
+            <h3>{{data.title}}</h3>
+            <div class="brief">
+                <p ng-class="{only:data.display_style == 10001}" ng-if="data.display_style !== 10003">{{data.abstract}}</p>
+
+                <div class="thumb" ng-if="data.display_style == 10002">
+                    <img ng-src="{{data.thumbs[0].small.url}}" alt="">
+                </div>
+                <div class="gallery" ng-if="data.display_style == 10003">
+                    <img ng-src="{{data.thumbs[0].small.url}}" alt="">
+                </div>
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+
